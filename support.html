@@ -10,7 +10,9 @@
     line-height: 1.6; max-width: 720px; margin: 0 auto; padding: 32px 20px 64px;
     color: #1c2433; background: #ffffff; }
   @media (prefers-color-scheme: dark) { body { color: #e7ecf3; background: #0b0e14; } a { color: #22d3ee; } }
-  h1 { font-size: 1.6rem; }
+  h1 { font-size: 1.6rem; margin-bottom: 4px; }
+  .updated { color: #6b7280; font-size: .9rem; margin: 0 0 28px; }
+  .note { border-left: 3px solid #22d3ee; padding: 8px 12px; background: rgba(34, 211, 238, .08); }
   h2 { font-size: 1.05rem; margin-top: 28px; text-transform: uppercase; letter-spacing: .03em; }
   ul { padding-left: 20px; }
   a { color: #2563eb; }
@@ -18,6 +20,7 @@
 </head>
 <body>
   <h1>OpenOBD — Support</h1>
+  <p class="updated">Updated for OpenOBD 1.2.0 · 2 September 2026</p>
   <p>OpenOBD turns your iPhone into a real-time car dashboard using an OBD2 (ELM327) adapter.</p>
 
   <h2>Getting started</h2>
@@ -30,10 +33,23 @@
   <h2>Features</h2>
   <ul>
     <li>Live engine data (speed, RPM, coolant, voltage, fuel and more)</li>
-    <li>Trip logging with GPS route, including in the background</li>
-    <li>Diagnostics: read and clear fault codes (DTCs)</li>
-    <li>English and Turkish</li>
+    <li>Trip logging with a GPS route, including while the screen is locked</li>
+    <li>Trip event capture with context from 60 seconds before and 30 seconds after an event</li>
+    <li>Diagnostics: stored, pending and permanent DTCs, freeze frame and inspection readiness</li>
+    <li>Used Car Check with a guided, non-destructive pre-purchase scan</li>
+    <li>Diesel Health with a DPF pre-check when the vehicle exposes compatible data</li>
+    <li>Battery and charging-system preliminary checks</li>
+    <li>Metric and imperial units, custom PIDs, CSV/report sharing and Copy for AI Analysis</li>
+    <li>A multilingual interface and localized App Store experience</li>
   </ul>
+
+  <h2>Compatibility and limitations</h2>
+  <p>Standard OBD2 support varies by vehicle, engine, model year and adapter. A value that
+  is not exposed by the vehicle cannot be measured by OpenOBD. Diesel Health and DPF
+  results are preliminary indicators; DPF-specific values are not universally available
+  through generic OBD2.</p>
+  <p class="note">OpenOBD does not reprogram the ECU, enable hidden vehicle features,
+  change automatic start-stop settings, or disable emissions systems such as the DPF.</p>
 
   <h2>Troubleshooting</h2>
   <ul>
@@ -41,7 +57,28 @@
     and Bluetooth is enabled. For Wi-Fi adapters, join the adapter’s Wi-Fi network first.</li>
     <li><strong>No data?</strong> Some values depend on your specific vehicle and may not be
     supported by all cars.</li>
+    <li><strong>iPhone Bluetooth Classic?</strong> Standard non-MFi Classic adapters do not
+    work on iPhone. Use a BLE or Wi-Fi ELM327 adapter instead.</li>
+    <li><strong>Trip stops with the screen locked?</strong> Allow background location access
+    (“Always” on iOS) so route recording can continue. OpenOBD starts location updates only
+    for an active trip and stops them when the trip ends.</li>
+    <li><strong>Diesel Health is unavailable?</strong> Connect to the vehicle and make sure
+    its fuel type is detected or selected as diesel. Individual DPF readings still depend
+    on the data supported by that vehicle.</li>
+    <li><strong>Used Car Check?</strong> Follow the on-screen steps while safely parked.
+    Results are a preliminary OBD2 snapshot, not a mechanical inspection or vehicle-history report.</li>
   </ul>
+
+  <h2>Exports and AI analysis</h2>
+  <p>OpenOBD can prepare a diagnostic summary and copy it to your clipboard. The app does
+  not send that text to an AI service automatically. You decide where to paste or share it;
+  review the report first if it contains a VIN or other information you prefer not to share.</p>
+
+  <h2>Safety</h2>
+  <p>Do not operate the phone while driving. Clearing DTCs also resets emissions readiness;
+  save a report first and clear only when the vehicle is safely parked, with the ignition
+  on and engine off. OpenOBD provides preliminary information and is not a replacement for
+  professional diagnosis.</p>
 
   <h2>Contact</h2>
   <p>Questions or feedback? Email
