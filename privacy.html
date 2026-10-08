@@ -47,25 +47,30 @@
   the adapter; no data is sent to us.</p>
 
   <h2>Optional anonymous usage statistics</h2>
-  <p>The app asks once, on first launch, whether you want to share anonymous usage
-  statistics, and you can change your choice at any time under Settings → “Help improve
-  OpenOBD”. It is off unless you allow it. If you allow it, the app sends anonymous events to Google Analytics (Google Firebase) so we
-  can see which vehicle makes and adapters are used and where connections fail. The app also
-  reports that it was opened, once per launch. Each event
-  can contain: the vehicle make, model year (derived from the VIN) and fuel type, the
-  connection type (Bluetooth or WiFi), the adapter name and OBD protocol, a coarse error
-  category (for example “timeout”), the list of sensor identifiers the vehicle did not
-  answer, the number of stored fault codes and the fault codes themselves (for example
-  “P0401”) found in a scan, the number of fault codes cleared, a rough trip length and
-  duration range (for example “5–20 km”, “15–30 min”), the app version, the platform, and
-  the app language. A random identifier generated on your device
-  links these events together; it is not tied to your name, account, or advertising ID, and
-  it is deleted when you turn the setting off.</p>
+  <p>The app asks once whether you want to share anonymous usage statistics, and you can
+  change your choice at any time under Settings → “Help improve OpenOBD”. It is off unless
+  you allow it; until then the analytics component collects and sends nothing. If you allow
+  it, the app uses Google Analytics for Firebase (a Google service) so we can see which
+  vehicles and adapters are used, where connections fail, and how the app is used.</p>
+  <p>The app’s own events can contain: the vehicle make, model year (derived from the VIN)
+  and fuel type, the connection type (Bluetooth or WiFi), the adapter name and OBD protocol,
+  a coarse error category (for example “timeout”), the list of sensor identifiers the
+  vehicle did not answer, the number of stored fault codes and the fault codes themselves
+  (for example “P0401”) found in a scan, the number of fault codes cleared, a rough trip
+  length and duration range (for example “5–20 km”, “15–30 min”), and the app language.</p>
+  <p>From version 1.3, the Google Analytics for Firebase software in the app also collects
+  standard usage information automatically: an app-instance identifier, the device model,
+  operating system and app version, the country or region (derived by Google from the IP
+  address), when the app is first opened, sessions, and how long the app is used. The
+  app-instance identifier is random; it is not tied to your name or account, the app does
+  not use the advertising identifier (IDFA), and the analytics data on your device is reset
+  when you turn the setting off.</p>
   <p>We never send your VIN, name, location, GPS routes, exact trip details, or live
-  readings. Google may process standard network information such as your IP
-  address under its own terms. You can turn the setting off at any time; no further events
-  are sent after that. OpenOBD does not use advertising trackers and does not track you
-  across other apps or websites.</p>
+  readings. Google processes this data under its own terms (see
+  <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>), and we keep
+  analytics data for a limited period in Google Analytics. You can turn the setting off at
+  any time; no further data is collected after that. OpenOBD does not use advertising
+  trackers and does not track you across other apps or websites.</p>
 
   <h2>Maps, sharing, and support</h2>
   <p>When you view a recorded route, the map itself is supplied by the mapping service
